@@ -338,7 +338,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                     0.0, 0.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    context.pushNamed('Cupom');
+                                    context.pushNamed('Estoque');
                                   },
                                   text: 'Entrar',
                                   options: FFButtonOptions(

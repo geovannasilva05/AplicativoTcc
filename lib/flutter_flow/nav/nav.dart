@@ -49,9 +49,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: 'Cupom',
-          path: '/cupom',
-          builder: (context, params) => CupomWidget(),
+          name: 'Estoque',
+          path: '/estoque',
+          builder: (context, params) => EstoqueWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
