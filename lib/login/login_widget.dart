@@ -1,3 +1,5 @@
+import 'package:universo_literario/login/login_controller.dart';
+
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -9,6 +11,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'login_model.dart';
 export 'login_model.dart';
+import 'package:toast/toast.dart';
 
 class LoginWidget extends StatefulWidget {
   const LoginWidget({Key? key}) : super(key: key);
@@ -67,6 +70,7 @@ class _LoginWidgetState extends State<LoginWidget>
 
     _model.emailAddressController ??= TextEditingController();
     _model.passwordController ??= TextEditingController();
+    ToastContext().init(context);
   }
 
   @override
@@ -78,6 +82,8 @@ class _LoginWidgetState extends State<LoginWidget>
 
   @override
   Widget build(BuildContext context) {
+     LoginController loginController = new LoginController();
+     
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -338,7 +344,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                     0.0, 0.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    context.pushNamed('Estoque');
+                                    await (
+                                        loginController.loginUsuario(email: _model.emailAddressController.text, senha: _model.passwordController.text,)
+                                        ) ? 
+                                        context.pushNamed('Estoque')
+                                        : 
+                                        Toast.show("Erro ao Logar - Usuário ou senha inválida.", duration: Toast.lengthShort, gravity: Toast.bottom);
+                                    
                                   },
                                   text: 'Entrar',
                                   options: FFButtonOptions(
