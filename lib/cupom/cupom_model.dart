@@ -1,19 +1,16 @@
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'cupom_widget.dart' show CupomWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class CupomModel extends FlutterFlowModel {
+class CupomModel extends FlutterFlowModel<CupomWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for searchBar widget.
-  TextEditingController? searchBarController;
-  String? Function(BuildContext, String?)? searchBarControllerValidator;
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
@@ -25,7 +22,6 @@ class CupomModel extends FlutterFlowModel {
 
   void dispose() {
     unfocusNode.dispose();
-    searchBarController?.dispose();
     tabBarController?.dispose();
   }
 
