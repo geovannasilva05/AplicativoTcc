@@ -343,13 +343,15 @@ class _LoginWidgetState extends State<LoginWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: FFButtonWidget(
+
+                                  //botão esta aqui 
                                   onPressed: () async {
                                     await (
                                         loginController.loginUsuario(email: _model.emailAddressController.text, senha: _model.passwordController.text,)
                                         ) ? 
                                         context.pushNamed('Estoque')
                                         : 
-                                        Toast.show("Erro ao Logar - Usuário ou senha inválida.", duration: Toast.lengthShort, gravity: Toast.bottom);
+                                        Toast.show("Erro ao fazer o login - Usuário ou senha inválida.", duration: Toast.lengthShort, gravity: Toast.bottom);
                                     
                                   },
                                   text: 'Entrar',
