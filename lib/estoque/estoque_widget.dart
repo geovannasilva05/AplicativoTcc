@@ -179,6 +179,7 @@ class _EstoqueWidgetState extends State<EstoqueWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 4.0, 8.0),
                                         child: Text(
+                                          'Quantidade:',
                                            lista.elementAt(index).getQuantidade.toString(),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
